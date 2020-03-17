@@ -1,0 +1,21 @@
+sceneSetups:
+- path: Assets/Scenes/MainScene.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
+- path: Assets/Scenes/Battlefield.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/UiEnvScene.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/ChestRoom.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/playground.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0

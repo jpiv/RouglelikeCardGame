@@ -1,0 +1,49 @@
+{
+	"enemies": [
+		{
+			"name": "Demon Boy",
+			"health": 10,
+			"attacks": [
+				{
+					"name": "punch",
+					"damageMin": 10,
+					"damageMax": 10
+				}
+			]
+		},
+		{
+			"name": "Rock Elemental",
+			"health": 10,
+			"attacks": [
+				{
+					"name": "punch",
+					"damageMin": 10,
+					"damageMax": 10
+				}
+			]
+		},
+		{
+			"name": "Cave Ape",
+			"health": 10,
+			"passives": [
+				{
+					"name": "dot",
+					"image": "BurnDebuff",
+					"phases": ["POST_ATTACK"],
+					"modifiers": {
+						"turns": 3,
+						"amount": 3,
+						"whenHit": true
+					}
+				}
+			],
+			"attacks": [
+				{
+					"name": "punch",
+					"damageMin": 10,
+					"damageMax": 10
+				}
+			]
+		}
+	]
+}

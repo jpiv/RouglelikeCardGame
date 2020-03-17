@@ -1,0 +1,25 @@
+<color=red>Demonic Influence</color> will build up as the enemies you encounter slowly corrupt your soul.  Push forward with your journey to maintain will power and resist their influence.
+
+<color=red>25 DI</color> Influence Level 1:
+		<color=yellow>Fear of Demons</color> - Occasionally enemies will attack before the player when
+		entering a combat room.
+
+<color=red>50 DI</color> Influence Level 2:
+		<color=yellow>Guilty Conscience</color> - Add a random Sin card to the player’s deck at the start of
+		each combat. Goes away after the combat.
+		<color=yellow>Damned</color> - Healing effects reduced by 35%.
+
+<color=red>75 DI</color> Influence Level 3:
+		<color=yellow>Condemned</color> - Each time a card is drawn, there is a 15% chance that its cost will
+		be increased by 1. For start of turn draws, a maximum of 2 cards can have 
+		increased cost.
+		<color=yellow>Atrophied</color> - Deal 1/2/3/4 less direct damage to enemies.
+		<color=yellow>Defenseless</color> - Take 1/2/3/4 more direct damage from enemies.
+
+<color=red>100 DI</color> Influence Level 4:
+		<color=yellow>Delusions</color> - At combat start, there is a chance for hallucinations to take the
+		place of enemies. Hallucinations appear as other enemy types to the player. 
+		Hallucinations have 1 health. When killed, hallucinations disappear and the 
+		actual enemy is revealed.
+		<color=yellow>Hopeless</color> - Healing effects reduced by another 35%.
+		<color=yellow>Degeneration</color> - Take 1/2/3/4 damage each turn during combat. 

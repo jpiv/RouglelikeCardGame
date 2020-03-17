@@ -1,0 +1,12 @@
+{
+
+	"items": [
+		{
+			"name": "Sturdy Chestplate", 
+			"image": "SturdyChestplate",
+			"stats": {
+				"power": 1
+			}
+		}
+	]
+}

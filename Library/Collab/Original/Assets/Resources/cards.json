@@ -1,0 +1,592 @@
+{
+	"upgradedCards": [
+		{
+			"name": "Attack +",
+			"description": "Deal *d damage. Multi-Strike *multiStrike",
+			"damage": 4,
+			"type": "attack",
+			"class": "",
+			"mana": 1,
+			"rarity": 1,
+			"image": "SavageSlash",
+			"effects": [
+				{
+					"name": "multiStrike",
+					"targetType": "self",
+					"phases": ["POST_ATTACK"],
+					"modifiers": {
+						"amount": 2
+					}
+				}
+			]
+		},
+		{
+			"name": "Mark of Purification +",
+			"description": "When you deal direct damage to an enemy, apply Mark.",
+			"damage": 0,
+			"type": "ability",
+			"targetType": "none",
+			"class": "",
+			"mana": 2,
+			"rarity": 4,
+			"image": "MarkofPurification",
+			"effects": [
+				{
+					"name": "mark",
+					"image": "mark",
+					"targetType": "self",
+					"phases": ["POST_ATTACK"],
+					"modifiers": {
+						"trance": true
+					}
+				}
+			]
+		},
+		
+		{
+			"name": "Marking Strike +",
+			"description": "Deal *d damage and apply *mark Marks.",
+			"damage": 5,
+			"type": "attack",
+			"targetType": "single",
+			"class": "",
+			"mana": 1,
+			"rarity": 2,
+			"image": "Mark_Strike1",
+			"effects": [
+				{
+					"name": "mark",
+					"targetType": "enemy",
+					"image": "mark",
+					"phases": ["PRE_ATTACK"],
+					"modifiers": { "amount": 2 }
+				}
+			]
+		}
+	],
+	"cards": [
+		{
+			"name": "Eclipse", 
+			"description": "Deal *d damage to all enemies. Add a mark to all enemies damaged.",
+			"damage": 3,
+			"type": "attack",
+			"targetType": "aoe",
+			"class": "",
+			"mana": 1,
+			"rarity": 2,
+			"image": "Eclipse",
+			"effects": [
+				{
+					"name": "mark",
+					"targetType": "enemy",
+					"phases": ["PRE_ATTACK"],
+					"image": "mark"
+				}
+				
+			]
+		},
+		{
+			"name": "Soul Siphon",
+			"description": "Deal *d damage and heal for *d.",
+			"damage": 4,
+			"type": "attack",
+			"targetType": "enemy",
+			"class": "",
+			"mana": 2,
+			"rarity": 1,
+			"image": "DrainSoulCardImage",
+			"effects": [
+				{
+					"name": "heal",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 4
+					}
+				}
+		
+			]
+		},
+		{
+			"name": "Cinder Storm",
+			"description": "Deal *d damage to all and apply a burn for 3 turns",
+			"damage": 6,
+			"type": "attack",
+			"targetType": "aoe",
+			"class": "",
+			"mana": 3,
+			"rarity": 3,
+			"image": "CinderStorm",
+			"effects": [
+				{
+					"name": "dot",
+					"targetType":"enemy",
+					"image": "BurnDebuff",
+					"phases": ["ENEMY_START"],
+					"modifiers": {
+						"turns": 3,
+						"amount": 3
+					}
+				}
+		
+			]
+		},
+		{
+			"name": "Radiant Ripple",
+			"description": "Deal *d damage to all enemies and heal for total damage dealt.",
+			"damage": 3,
+			"type": "attack",
+			"targetType": "aoe",
+			"class": "",
+			"mana": 3,
+			"rarity": 3,
+			"image": "RadiantRipple",
+			"effects": [
+				{
+					"name": "heal",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 4
+					}
+				}
+		
+			]
+		},
+		{
+			"name": "Corrupt Soul",
+			"description": "Deal 7 damage each turn for 3 turns",
+			"damage": 0,
+			"type": "attack",
+			"targetType": "enemy",
+			"class": "",
+			"mana": 2,
+			"rarity": 2,
+			"image": "CorruptSoul",
+			"effects": [
+				{
+					"name": "dot",
+					"targetType":"enemy",
+					"image": "CorruptDebuff",
+					"phases": ["ENEMY_START"],
+					"modifiers": {
+						"turns": 3,
+						"amount": 7
+					}
+				}
+		
+			]
+		}, 
+		{
+			"name": "Attack",
+			"description": "Deal *d damage.",
+			"damage": 4,
+			"type": "attack",
+			"class": "",
+			"mana": 1,
+			"rarity": 1,
+			"image": "SavageSlash",
+			"upgrade": "Attack +",
+			"effects": []
+		},
+		{
+			"name": "Mana Strike",
+			"description": "Deal *d damage. Restore *mana mana",
+			"damage": 1,
+			"type": "attack",
+			"class": "",
+			"mana": 0,
+			"rarity": 1,
+			"image": "JuicySlash",
+			"upgrade": "Attack +",
+			"effects": [
+				{
+					"name": "mana",
+					"targetType": "self",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 1
+					}
+
+				}
+			]
+		},
+		{
+			"name": "Brace",
+			"description": "Reduce damage taken from the next source by half.",
+			"damage": 0,
+			"type": "ability",
+			"class": "",
+			"mana": 1,
+			"rarity": 1,
+			"image": "Brace",
+			"effects": [
+				{
+					"name": "reduceDamage",
+					"image": "ReduceHitBuff",
+					"targetType": "self",
+					"phases": ["ENEMY_PRE_ATTACK"],
+					"modifiers": {
+						"hits": "1",
+						"damageMultiplier": 0.5
+					}
+				}
+			]
+		},
+		{
+			"name": "Mend",
+			"description": "Restore 4 Health.",
+			"damage": 0,
+			"type": "ability",
+			"targetType": "self",
+			"class": "",
+			"mana": 2,
+			"rarity": 1,
+			"image": "Mend",
+			"effects": [
+				{
+					"name": "heal",
+					"phases": ["POST_ABILITY"],
+					"modifiers": {
+						"amount": 4
+					}
+				}
+			]
+		},
+		{
+			"name": "Marking Strike",
+			"description": "Deal *d damage and apply *mark Mark.",
+			"damage": 4,
+			"type": "attack",
+			"targetType": "single",
+			"class": "",
+			"mana": 1,
+			"rarity": 2,
+			"image": "Mark_Strike1",
+			"upgrade": "Marking Strike +",
+			"effects": [
+				{
+					"name": "mark",
+					"targetType": "enemy",
+					"image": "mark",
+					"phases": ["PRE_ATTACK"],
+					"modifiers": {
+						"amount": 1
+					}
+				}
+			]
+		},
+		{
+			"name": "Satanic Spike",
+			"description": "Deal *d damage. Apply *mark Marks. Discard entire hand. Dissolve *dissolve",
+			"damage": 15,
+			"type": "attack",
+			"targetType": "single",
+			"class": "",
+			"mana": 4,
+			"rarity": 5,
+			"image": "Mark_Strike1",
+			"effects": [
+				{
+					"name": "mark",
+					"targetType": "enemy",
+					"image": "mark",
+					"phases": ["PRE_ATTACK"],
+					"modifiers": { "amount": 3 }
+				},
+				{
+					"name": "discard",
+					"targetType": "none",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"random": true,
+						"amount": -1
+
+					}
+				},
+				{
+					"name": "dissolve",
+					"targetType": "self",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 1
+					}
+				}	
+			]
+		},
+		{
+			"name": "Circle of Salt",
+			"description": "Shield for 4 damage. When the shield is struck, Mark the attacker.",
+			"damage": 0,
+			"type": "ability",
+			"targetType": "self",
+			"class": "",
+			"mana": 3,
+			"rarity": 4,
+			"image": "CircleOfSalt",
+			"effects": [
+				{
+					"name": "shield",
+					"targetType": "self",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 4
+					}
+				},
+				{
+					"name": "mark",
+					"targetType": "self",
+					"phases": ["ENEMY_PRE_ATTACK", "ENEMY_POST_ATTACK"],
+					"modifiers": {
+						"onShieldDamage": true
+					}
+				}
+			]
+		},
+		{
+			"name": "Mark of Purification",
+			"description": "When you deal direct damage to an enemy, apply Mark.",
+			"damage": 0,
+			"type": "ability",
+			"targetType": "none",
+			"class": "",
+			"mana": 3,
+			"rarity": 4,
+			"image": "MarkofPurification",
+			"upgrade": "Mark of Purification +",
+			"effects": [
+				{
+					"name": "mark",
+					"image": "mark",
+					"targetType": "self",
+					"phases": ["POST_ATTACK"],
+					"modifiers": {
+						"trance": true
+					}
+				}
+			]
+		},
+		{
+			"name": "Pain Gain",
+			"description": "Each turn take 2 damage and draw 1 extra card",
+			"damage": 0,
+			"type": "ability",
+			"targetType": "none",
+			"class": "",
+			"mana": 2,
+			"rarity": 1,
+			"image": "PainGain",
+			"effects": [
+				{	
+					"name": "dot",
+					"targetType": "self",
+					"image": "CorruptDebuff",
+					"phases": ["PLAYER_START"],
+					"modifiers": {
+						"turns":2,
+						"amount": 2,
+						"trance": true
+				}},
+				{
+					"name": "draw",
+					"phases": ["PLAYER_START"],
+					"modifiers": {
+						"amount": 1,
+						"trance": true
+					}
+				}
+			]
+		},
+		{
+			"name": "Purge",
+			"description": "Deal *d damage. Discard a card.",
+			"damage": 7,
+			"type": "attack",
+			"targetType": "none",
+			"class": "",
+			"mana": 1,
+			"rarity": 2,
+			"image": "CrossCard",
+			"effects": [
+				{
+					"name": "discard",
+					"targetType": "none",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"random": true,
+						"amount": 1
+
+					}
+				}
+			]
+		},
+		{
+			"name": "Sear",
+			"description": "Deal *d damage. Target takes *dot damage at the start of the next 2 turns.",
+			"damage": 5,
+			"type": "attack",
+			"targetType": "enemy",
+			"class": "",
+			"mana": 2,
+			"rarity": 3,
+			"image": "Fire",
+			"effects": [
+				{
+					"name": "dot",
+					"targetType":"enemy",
+					"image": "BurnDebuff",
+					"phases": ["ENEMY_START"],
+					"modifiers": {
+						"turns": 2,
+						"amount": 3
+					}
+				}
+			]
+		},
+		{
+			"name": "Devils Deal",
+			"description": "Discard 2 Random cards, gain 2 mana",
+			"damage": 0,
+			"type": "ability",
+			"targetType": "self",
+			"class": "",
+			"mana": 1,
+			"rarity": 2,
+			"image": "DevilsDeals",
+			"effects": [
+				{
+					
+					"name": "discard",
+					"targetType": "none",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"random": true,
+						"amount": 2
+				}},
+				{
+					"name": "mana",
+					"targetType":"self",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 3
+					}
+				}
+			]
+		},
+		{
+			"name": "Hells Wrath",
+			"description": "Deal *d damage and draw 1 card",
+			"damage": 8,
+			"type": "attack",
+			"targetType": "enemy",
+			"class": "",
+			"mana": 2,
+			"rarity": 2,
+			"image": "HellsWrath",
+			"effects": [
+				{
+					"name": "draw",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 1
+					}
+				}
+			]
+		},
+		{
+			"name": "Meditate",
+			"description": "Draw a card and gain 1 mana. Dissolve *dissolve.",
+			"damage": 0,
+			"type": "ability",
+			"targetType": "self",
+			"class": "",
+			"mana": 0,
+			"rarity": 4,
+			"image": "RedPentagram",
+			"effects": [
+				{
+					"name": "draw",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 1
+					}
+				},
+				{
+					"name": "mana",
+					"targetType": "self",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 1
+					}
+
+				},
+				{
+					"name": "dissolve",
+					"targetType": "self",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 1
+					}
+				}	
+			]
+		},
+		{
+			"name": "Bracing Strike",
+			"description": "Deal *d damage and reduce the next enemy attack by half. Dissolve *dissolve.",
+			"damage": 7,
+			"type": "attack",
+			"class": "",
+			"mana": 2,
+			"rarity": 2,
+			"image": "BracingStrike",
+			"effects": [
+				{
+					"name": "reduceDamage",
+					"image": "ReduceHitBuff",
+					"targetType": "self",
+					"phases": ["ENEMY_PRE_ATTACK"],
+					"modifiers": {
+						"hits": "1",
+						"damageMultiplier": 0.5
+					}
+				},
+				{
+					"name": "dissolve",
+					"targetType": "self",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 1
+					}
+				}
+			]
+		},
+		{
+			"name": "Demonic Mirror",
+			"description": "Reduce damage taken from the next 2 sources by half. Dissolve *dissolve.",
+			"damage": 0,
+			"type": "ability",
+			"class": "",
+			"mana": 2,
+			"rarity": 2,
+			"image": "mirror",
+			"effects": [
+				{
+					"name": "reduceDamage",
+					"image": "ReduceHitBuff",
+					"targetType": "self",
+					"phases": ["ENEMY_PRE_ATTACK"],
+					"modifiers": {
+						"hits": "2",
+						"damageMultiplier": 0.5
+					}
+				},
+				{
+					"name": "dissolve",
+					"targetType": "self",
+					"phases": ["CARD_PLAYED"],
+					"modifiers": {
+						"amount": 2	
+					}
+				}
+			]
+		}
+	]
+}
